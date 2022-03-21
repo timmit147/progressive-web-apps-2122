@@ -1,0 +1,25 @@
+{
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "name": "progressive-web-apps-2122",
+  "description": "![pwa](https://user-images.githubusercontent.com/3104648/28351989-7f68389e-6c4b-11e7-9bf2-e9fcd4977e7a.png)",
+  "version": "1.0.0",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timmit147/progressive-web-apps-2122.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timmit147/progressive-web-apps-2122/issues"
+  },
+  "homepage": "https://github.com/timmit147/progressive-web-apps-2122#readme"
+}

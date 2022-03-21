@@ -1,0 +1,208 @@
+*{
+    margin: 0px;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
+body{
+    background-color: black;
+    overflow: hidden;
+    height: 100vh;
+    min-height: -webkit-fill-available;
+}
+
+ul {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100vw;
+  overflow: hidden;
+}
+
+li > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3em;
+  color: red;
+  display: none;
+}
+
+li {
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+    height: 100%;
+    width: 100vw;
+}
+
+li:first-child{
+    z-index: 2;
+} 
+
+li:first-child:after{
+  content: "Rijksmuseum kunst";
+  z-index: 99999999;
+  position: fixed;
+  background-color: black;
+  left: 0;
+  padding: 20px;
+  font-size: 1.8em;
+  color: white;
+}
+
+li:nth-child(2){
+    z-index: 1;
+} 
+
+img{
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+}
+
+h1 {
+    position: absolute;
+    bottom: 0px;
+    background-color: black;
+    color: wheat;
+    padding: 20px;
+    font-size: 1.8rem;
+}
+
+.loading, .error {
+  background-color: black;
+  z-index: 99999;
+  width: 100vw;
+  height: 100%;
+  position: fixed;
+}
+
+.error{
+  display: none;
+}
+
+.error p{
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+
+.loader {
+    position: absolute;
+    top: calc(50% - 60px);
+    left: calc(50% - 60px);
+    transform: translate(-50%, -50%);
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+    z-index: -1;
+  }
+
+  /* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .menuButton {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    z-index: 999999999999;
+    margin: 10px;
+}
+  
+  .menuButton:before,
+  .menuButton:after,
+  .menuButton div {
+    background: #fff;
+    content: "";
+    display: block;
+    height: 6px;
+    border-radius: 3px;
+    margin: 7px 0;
+    transition: 0.5s;
+  }
+
+  .iconSwitch:before {
+    transform: translateY(12px) rotate(135deg);
+  }
+
+  .iconSwitch:after {
+    transform: translateY(-12px) rotate(-135deg);
+  }
+
+  .iconSwitch div {
+    transform: scale(0);
+  }
+
+.menu {
+    transition: all 1s;
+    background-color: #000000ed;
+    width: 100vw;
+    height: 100%;
+    left: 100vw;
+    top: 0;
+    position: fixed;
+    z-index: 999999999;
+    padding: 10px;
+}
+
+.menuShow{
+    left: 0;
+}
+
+.menu h2 {
+    color: white;
+    font-size: 4rem;
+}
+
+.menu p{
+    color: white;
+    font-size: 2rem;
+    padding: 10px 0px;
+}
+
+select#selectNumber {
+  font-size: 1.2rem;
+  width: 90%;
+  margin-top: 10px;
+}
+
+.tutorial{
+  background-color: red;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 99999999;
+  left: 0;
+  top: 0;
+}
