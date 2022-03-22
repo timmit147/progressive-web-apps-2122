@@ -1,14 +1,23 @@
-const http = require('http');
+require('dotenv').config()
+const express = require('express')
 
-const hostname = '127.0.0.1';
-const port = 3000;
+const app = express()
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+// Stel ejs in als template engine
+app.set('view engine', 'ejs')
+app.set('views', './views')
+
+// Stel een static map in
+app.use(express.static('public'))
+
+app.get('/', function (req, res) {
+  res.render("index")
+  // res.end('Hello World');
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+app.set('port', process.env.PORT || 8000)
+
+
+const server = app.listen(app.get('port'), function () {
+  console.log(`Application started on port: ${app.get('port')}`)
+})
