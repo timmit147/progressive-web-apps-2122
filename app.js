@@ -1,23 +1,38 @@
-require('dotenv').config()
-const express = require('express')
+require('dotenv').config();
+const express = require('express');
 
-const app = express()
+// Get data from api
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+
+async function fetchJson(url) {
+  return await fetch(url)
+    .then((response) => response.json())
+    .catch((error) => error)
+}
+
+// Use express
+const app = express();
 
 // Stel ejs in als template engine
-app.set('view engine', 'ejs')
-app.set('views', './views')
+app.set('view engine', 'ejs');
+app.set('views', './views');
 
 // Stel een static map in
-app.use(express.static('public'))
+app.use(express.static('public'));
 
 app.get('/', function (req, res) {
-  res.render("index")
-  // res.end('Hello World');
+  fetchJson('https://www.rijksmuseum.nl/api/nl/collection?key=hkKbTt5W&involvedMaker=Rembrandt+van+Rijn').then(function (jsonData) {
+    console.log(jsonData);
+    res.render("index",{
+      data: jsonData,
+    });
+  });
+
 });
 
-app.set('port', process.env.PORT || 8000)
+app.set('port', process.env.PORT || 8000);
 
 
 const server = app.listen(app.get('port'), function () {
-  console.log(`Application started on port: ${app.get('port')}`)
+  console.log(`App gestart op poort: ${app.get('port')}`);
 })
