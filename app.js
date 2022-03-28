@@ -22,7 +22,7 @@ app.use(express.static('public'));
 
 app.get('/', function (req, res) {
   fetchJson('https://www.rijksmuseum.nl/api/nl/collection?key=hkKbTt5W&involvedMaker=Rembrandt+van+Rijn').then(function (jsonData) {
-    console.log(jsonData);
+    console.log(jsonData.artObjects[0]);
     res.render("index",{
       data: jsonData,
     });
