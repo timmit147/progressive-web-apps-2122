@@ -14,7 +14,8 @@
     "node-service-worker": "^2.1.2"
   },
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "node app.js",
+    "start2": "nodemon ./bin/www"
   },
   "repository": {
     "type": "git",
