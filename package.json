@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "node app.js",
-    "start2": "nodemon ./bin/www"
+    "test": "nodemon ./bin/www"
   },
   "repository": {
     "type": "git",

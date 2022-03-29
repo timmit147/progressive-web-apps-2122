@@ -8,6 +8,7 @@ self.addEventListener('install', function (event) {
         ]);
       }),
     );
+    self.skipWaiting(); 
   });
 
   self.addEventListener('activate', event => {
@@ -15,6 +16,7 @@ self.addEventListener('install', function (event) {
   });
 
 
+  // caches first then network
   self.addEventListener('fetch', function(event) {
               // console.log('fetch event', event);
     event.respondWith(

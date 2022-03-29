@@ -14,7 +14,7 @@
     <div class="error">
         <p>Error Api werkt niet</p>
     </div>
-<!-- 
+
     <div class="menu">
         <h2>Settings</h2>
         <p>Filter artist</p>
@@ -22,7 +22,28 @@
             <option class="defaultOption">Choose a artist</option>
         </select>
     </div> -->
-    <!-- <div class="menuButton">
+     <div class="menuButton">
         <div></div>
-    </div> -->
+    </div>
+
+    <!-- <% 
+    console.log(names); 
+    %>  -->
+
+    <script>
+       var names =  "<%- names %>";
+       names = names.split(","); 
+    for(let i = 0; i < names.length; i++) {
+        var opt = names[i];
+        var el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        document.getElementById("selectNumber").appendChild(el);
+        if(location.hash){
+            console.log(location.hash);
+            document.querySelector(".defaultOption").innerHTML = location.hash.replaceAll('#', '').replaceAll('%20', ' ');
+        }
+    }
+    </script>
+
     <%- include('./partials/foot') %>
