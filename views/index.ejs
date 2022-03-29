@@ -26,24 +26,23 @@
         <div></div>
     </div>
 
-    <!-- <% 
-    console.log(names); 
-    %>  -->
-
     <script>
        var names =  "<%- names %>";
        names = names.split(","); 
     for(let i = 0; i < names.length; i++) {
         var opt = names[i];
         var el = document.createElement("option");
+        console.log("testtst"); 
         el.textContent = opt;
         el.value = opt;
         document.getElementById("selectNumber").appendChild(el);
-        if(location.hash){
-            console.log(location.hash);
-            document.querySelector(".defaultOption").innerHTML = location.hash.replaceAll('#', '').replaceAll('%20', ' ');
-        }
     }
+
+    document.getElementById("selectNumber").addEventListener("change", function() {
+        window.location.href=this.value;
+        // window.location = '#'+this.value+'';
+        // console.log('You selected: ', this.value);
+    }); 
     </script>
 
     <%- include('./partials/foot') %>

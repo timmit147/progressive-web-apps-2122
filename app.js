@@ -23,8 +23,6 @@ app.use(express.static('public'));
 app.get('/', function (req, res) {
   fetchJson('https://www.rijksmuseum.nl/api/nl/collection?key=hkKbTt5W&involvedMaker=Rembrandt+van+Rijn&ps=100').then(function (jsonData) {
     fetchJson('https://www.rijksmuseum.nl/api/nl/collection?key=hkKbTt5W&ps=100').then(function (jsonData2) {
-    //   console.log(jsonData2.artObjects[0]);
-    // console.log(jsonData.artObjects[0]);
     const listNames = names(jsonData2);
     res.render("index",{
       data: jsonData,
@@ -33,6 +31,24 @@ app.get('/', function (req, res) {
   });
 });
 });
+
+app.get('/Abraham%20Roentgen', function (req, res) {
+  fetchJson('https://www.rijksmuseum.nl/api/nl/collection?key=hkKbTt5W&involvedMaker=Rembrandt+van+Rijn&ps=100').then(function (jsonData) {
+    fetchJson('https://www.rijksmuseum.nl/api/nl/collection?key=hkKbTt5W&ps=100').then(function (jsonData2) {
+    const listNames = names(jsonData2);
+    res.render("index",{
+      data: jsonData,
+      names: listNames
+    });
+  });
+});
+});
+
+
+app.use((err, req, res, next) => {
+  console.error(err.stack)
+  res.status(500).send('Something broke!')
+})
 
 
 function names(data){

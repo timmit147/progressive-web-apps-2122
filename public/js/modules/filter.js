@@ -44,6 +44,7 @@ export  function filterArtist(filter) {
             for(let i = 0; i < unique.length; i++) {
                 var opt = unique[i];
                 var el = document.createElement("option");
+                console.log("testtst");
                 el.textContent = opt;
                 el.value = opt;
                 document.getElementById("selectNumber").appendChild(el);
@@ -52,6 +53,9 @@ export  function filterArtist(filter) {
                     document.querySelector(".defaultOption").innerHTML = location.hash.replaceAll('#', '').replaceAll('%20', ' ');
                 }
             }
+            document.getElementById("selectNumber").addEventListener("change", function() {
+                console.log("test");
+            });      
 
 
         })
