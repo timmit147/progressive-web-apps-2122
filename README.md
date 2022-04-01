@@ -1,4 +1,5 @@
-# Progressive Web Apps @cmda-minor-web · 2021/22
+# Progressive Web Apps kunst app
+Ik heb de app staan op deze server. https://art-api-147.herokuapp.com/
 
 ## Start node server
 
@@ -8,3 +9,4 @@
 * Check of je terminal path klopt ander aanpassen door te navigeren met cd
 * Type node app.js
 * Om de server te sluiten type ctl n
+
