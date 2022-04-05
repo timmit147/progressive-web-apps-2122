@@ -14,6 +14,13 @@ Ik heb de app staan op deze server. https://art-api-147.herokuapp.com/
 * Type node app.js
 * Om de server te sluiten type ctl n
 
+## Serverside rendering
+De app die ik heb gemaakt is omgezet naar Serverside rendering. Het voordeel van het renderen van code op de server is dat de website sneller werkt, Vooral voor mensen die niet de nieuwse aparaten hebben kunnen ze de website bekijken met minder vertraging. Het werkt doordat niet de browser de javascript code gaat uitvoeren maar dat de server dit voor je gaat doen. Voordeel van serverside renderen is dat het voor meerderen mensen beter toegankelijk is te gebruiken. Nadeel is dat dit voor de server meer energie gaat kosten en dus meer geld.
+
+## Service Worker 
+Waneer je mijn app voor het eerste bezoekt gaat deze data opslaan in de browser storage. Waneer je opnieuw de app bezoekt hoeft die niet opnieuw data optehallen van de server maar kan dat direct vanuit de browser storage.
+
+## Activity diagram
 
 ## Breakdown-graph
 
