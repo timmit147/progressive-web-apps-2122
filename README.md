@@ -60,4 +60,5 @@ Menu
 
 ## Activity diagram
 
-![iPhone 12 Pro Max – 14](https://user-images.githubusercontent.com/29665951/157256361-36206d8b-1d18-40d3-a1a6-cb8bef519d48.png)
+![iPhone 12 Pro Max – 15](https://user-images.githubusercontent.com/29665951/161968873-00f9f7ca-94d2-46e1-9fb7-2e769ff7f0fc.png)
+
