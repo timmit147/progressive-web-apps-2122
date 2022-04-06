@@ -20,7 +20,25 @@ De app die ik heb gemaakt is omgezet naar Serverside rendering. Het voordeel van
 ## Service Worker 
 Waneer je mijn app voor het eerste bezoekt gaat deze data opslaan in de browser storage. Waneer je opnieuw de app bezoekt hoeft die niet opnieuw data optehallen van de server maar kan dat direct vanuit de browser storage.
 
-## Activity diagram
+## Critical Rendering Path
+
+### Lighthouse
+Tijdens het draaien van lighthouse op heroku kreeg ik een melding Something broke! De server was daarna helemaal niet meer berijkbaar en het opnieuw deployen werkt ook niet meer.
+
+
+![image](https://user-images.githubusercontent.com/29665951/161924172-e58608a9-1718-4c6d-af89-f83b54bb933d.png)
+
+![image](https://user-images.githubusercontent.com/29665951/161923933-08a7c974-fc57-47e7-bf0b-71c3a38e7a02.png)
+
+Het probleem zat niet in lighthouse maar dat de api die ik gebruikt een nieuw schilderij heeft toegevoegd zonder afbeelding. Mijn code had geen fallback daarom kreeg ik de error. De oplossing was een if statement er om heen  te plaatsen dat check of een afbeelding bestaat.
+
+<% if(data.artObjects[i].webImage != null){ %>
+
+Nadat de code was opgelost is dit mijn lighthouse report.
+
+![image](https://user-images.githubusercontent.com/29665951/161938614-5d49c7da-d9db-4302-b239-cac8469328f2.png)
+
+
 
 ## Breakdown-graph
 
