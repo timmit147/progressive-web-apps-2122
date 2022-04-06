@@ -38,6 +38,10 @@ Nadat de code was opgelost is dit mijn lighthouse report.
 
 ![image](https://user-images.githubusercontent.com/29665951/161938614-5d49c7da-d9db-4302-b239-cac8469328f2.png)
 
+Ik heb kleine aanpassingen gedaan in de code waardoor de score omhoog is gegaan. De app heeft nu ook een groen vinkje bij PWA. Bij Performance kon ik de afbeeldingen aanpassen naar een betere versie om 100% te krijgen maar omdat de afbeelding van een api afkomt is kan ik dit niet makelijk doen.
+
+![image](https://user-images.githubusercontent.com/29665951/161955140-51e2f188-61e2-4d61-91e2-691c11b73e4c.png)
+
 
 
 ## Breakdown-graph
