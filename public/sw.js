@@ -3,6 +3,8 @@ self.addEventListener('install', function (event) {
       caches.open('v4').then(function (cache) {
         return cache.addAll([
           '/',
+          '/offline',
+          '/notFound',
           '/css/style.css',
           '/js/script.js'
         ]);

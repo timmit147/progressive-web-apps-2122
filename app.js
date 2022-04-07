@@ -28,26 +28,39 @@ app.get('/', function (req, res) {
       data: jsonData,
       names: listNames
     });
+    });
   });
 });
+
+app.get('/offline', (req, res) => {
+	res.render("offline");
 });
 
-app.get('/Abraham%20Roentgen', function (req, res) {
-  fetchJson('https://www.rijksmuseum.nl/api/nl/collection?key=hkKbTt5W&involvedMaker=Rembrandt+van+Rijn&ps=100').then(function (jsonData) {
+
+app.get('/:id', function (req, res) {
+  fetchJson('https://www.rijksmuseum.nl/api/nl/collection?key=hkKbTt5W&involvedMaker='+req.params.id+'&ps=100').then(function (jsonData) {
     fetchJson('https://www.rijksmuseum.nl/api/nl/collection?key=hkKbTt5W&ps=100').then(function (jsonData2) {
     const listNames = names(jsonData2);
-    res.render("index",{
-      data: jsonData,
-      names: listNames
-    });
+    console.log(req.params.id);
+    console.log(listNames.includes(req.params.id));
+    if((listNames.includes(req.params.id) == true)){
+      res.render("index",{
+        data: jsonData,
+        names: listNames,
+        id: req.params.id
+      });
+    }
+    else{
+      res.render("notFound");
+    }
   });
 });
 });
 
 
 app.use((err, req, res, next) => {
-  console.error(err.stack)
-  res.status(500).send('Something broke!')
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
 })
 
 
@@ -65,11 +78,7 @@ function names(data){
   return unique = [...new Set(allPainters)];
 }
 
-
-
-
 app.set('port', process.env.PORT || 8000);
-
 
 const server = app.listen(app.get('port'), function () {
   console.log(`App gestart op poort: ${app.get('port')}`);

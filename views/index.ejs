@@ -5,7 +5,9 @@
 
     <li style="margin-bottom: <%- (i * -100); %>vh">
         <h1><%- data.artObjects[i].title %></h1>
-        <img src=<%- data.artObjects[i].webImage.url.slice(0, -3)+"=s500" %>>
+        <% if(data.artObjects[i].webImage != null){ %>
+            <img alt="<%- data.artObjects[i].title %>" src=<%-data.artObjects[i].webImage.url.slice(0, -3)+"=s500" %>>
+         <% } %>  
     </li>
     <% } %>
 </ul>
@@ -32,7 +34,6 @@
     for(let i = 0; i < names.length; i++) {
         var opt = names[i];
         var el = document.createElement("option");
-        console.log("testtst"); 
         el.textContent = opt;
         el.value = opt;
         document.getElementById("selectNumber").appendChild(el);
@@ -40,8 +41,6 @@
 
     document.getElementById("selectNumber").addEventListener("change", function() {
         window.location.href=this.value;
-        // window.location = '#'+this.value+'';
-        // console.log('You selected: ', this.value);
     }); 
     </script>
 
