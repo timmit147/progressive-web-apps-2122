@@ -1,5 +1,7 @@
+<!-- Load header -->
 <%- include('./partials/head') %>
 
+<!-- Loop artobjects in a ul -->
 <ul>
 <% for (var i = 0; i < data.artObjects.length; i++) { %>
 
@@ -12,36 +14,34 @@
     <% } %>
 </ul>
 
+<!-- Menu with dropdown with all painters -->
+<div class="menu">
+    <h2>Settings</h2>
+    <p>Filter artist</p>
+    <select id="selectNumber">
+        <option class="defaultOption">Choose a artist</option>
+    </select>
+</div> -->
+    <div class="menuButton">
+    <div></div>
+</div>
 
-    <div class="error">
-        <p>Error Api werkt niet</p>
-    </div>
+<!-- Place list of artist in option -->
+<script>
+    var names =  "<%- names %>";
+    names = names.split(","); 
+for(let i = 0; i < names.length; i++) {
+    var opt = names[i];
+    var el = document.createElement("option");
+    el.textContent = opt;
+    el.value = opt;
+    document.getElementById("selectNumber").appendChild(el);
+}
 
-    <div class="menu">
-        <h2>Settings</h2>
-        <p>Filter artist</p>
-        <select id="selectNumber">
-            <option class="defaultOption">Choose a artist</option>
-        </select>
-    </div> -->
-     <div class="menuButton">
-        <div></div>
-    </div>
+document.getElementById("selectNumber").addEventListener("change", function() {
+    window.location.href=this.value;
+}); 
+</script>
 
-    <script>
-       var names =  "<%- names %>";
-       names = names.split(","); 
-    for(let i = 0; i < names.length; i++) {
-        var opt = names[i];
-        var el = document.createElement("option");
-        el.textContent = opt;
-        el.value = opt;
-        document.getElementById("selectNumber").appendChild(el);
-    }
-
-    document.getElementById("selectNumber").addEventListener("change", function() {
-        window.location.href=this.value;
-    }); 
-    </script>
-
-    <%- include('./partials/foot') %>
+<!-- Load footer -->
+<%- include('./partials/foot') %>
