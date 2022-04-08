@@ -42,6 +42,16 @@ Ik heb kleine aanpassingen gedaan in de code waardoor de score omhoog is gegaan.
 
 ![image](https://user-images.githubusercontent.com/29665951/161955140-51e2f188-61e2-4d61-91e2-691c11b73e4c.png)
 
+### Kleine images ophalen
+img.src = data.artObjects[0].webImage.url.slice(0, -3)+"=s1000";
+ 
+#### Uitleg code
+Wanneer je de url hebt van een afbeelding eindigt dit met =s0.
+s0: de grootste afbeelding
+s1000: normaal formaat
+ 
+url.slice(0, -3) zorgt er voor dat de laatste letters van de url verwijdert worden en + "=s1000" plaatst tekst achter de url.
+
 
 
 ## Breakdown-graph
@@ -62,8 +72,11 @@ Menu
 
 ![iPhone 12 Pro Max – 15](https://user-images.githubusercontent.com/29665951/161968873-00f9f7ca-94d2-46e1-9fb7-2e769ff7f0fc.png)
 
-## Nog niet gelukt
+## Wat ik nog willen doen
 * Wanneer je een pagina gaat laaden deze opgeslagen word in de cache
 * Minifying css, js en html.
+* Meer verdiepen in optimaliseren van code
+* Stylen van offline pagina
+* Style van pagina niet gevonden
 
 
