@@ -39,12 +39,19 @@ app.get('/offline', (req, res) => {
 	res.render("offline");
 });
 
+// Render notfound when page not exsist
+app.get('/notfound', (req, res) => {
+	res.render("notfound");
+});
+
 // Fetch data with id from url and render homepage
-app.get('/:id', async function (req, res) {
+app.get('/artist:id', async function (req, res) {
   fetchJson('https://www.rijksmuseum.nl/api/nl/collection?key=hkKbTt5W&involvedMaker='+req.params.id+'&ps=100').then(function (jsonData) {
     fetchJson('https://www.rijksmuseum.nl/api/nl/collection?key=hkKbTt5W&ps=100').then(function (jsonData2) {
       const listNames = names(jsonData2);
       // If page is not in fetch render page not found
+      console.log("test");
+      console.log(listNames.includes(req.params.id));
       if((listNames.includes(req.params.id) == true)){
         res.render("index",{
           data: jsonData,
@@ -53,7 +60,7 @@ app.get('/:id', async function (req, res) {
         });
       }
       else{
-        res.render("notFound");
+        res.render("notfound");
       }
     });
   });

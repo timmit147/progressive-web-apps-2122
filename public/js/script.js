@@ -1,3 +1,4 @@
+// Function to swipe through art 
 function swipe(){
   function delay(n){
     return new Promise(function(resolve){
@@ -44,6 +45,7 @@ function swipe(){
 
 swipe();
 
+// Show and hide menu
 function menu(){
   const menuButton = document.querySelector(".menuButton");
   const menu = document.querySelector(".menu");
