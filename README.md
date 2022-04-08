@@ -62,3 +62,8 @@ Menu
 
 ![iPhone 12 Pro Max – 15](https://user-images.githubusercontent.com/29665951/161968873-00f9f7ca-94d2-46e1-9fb7-2e769ff7f0fc.png)
 
+## Nog niet gelukt
+* Wanneer je een pagina gaat laaden deze opgeslagen word in de cache
+* Minifying css, js en html.
+
+
