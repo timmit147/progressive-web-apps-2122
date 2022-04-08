@@ -19,24 +19,18 @@
     <h2>Settings</h2>
     <p>Filter artist</p>
     <select id="selectNumber">
-        <option class="defaultOption">Choose a artist</option>
+        <option class="defaultOption"> Choose a artist </option>
+        <% for (var i = 0; i < names.length; i++) { %>
+            <option > <%- names[i] %></option> 
+        <% } %>
     </select>
-</div> -->
+</div>
     <div class="menuButton">
     <div></div>
 </div>
 
 <!-- Place list of artist in option -->
 <script>
-    var names =  "<%- names %>";
-    names = names.split(","); 
-for(let i = 0; i < names.length; i++) {
-    var opt = names[i];
-    var el = document.createElement("option");
-    el.textContent = opt;
-    el.value = opt;
-    document.getElementById("selectNumber").appendChild(el);
-}
 
 document.getElementById("selectNumber").addEventListener("change", function() {
     window.location.href="artist"+this.value;

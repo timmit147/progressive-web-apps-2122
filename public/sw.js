@@ -1,7 +1,7 @@
 // Cache files in storage
 self.addEventListener('install', function (event) {
     event.waitUntil(
-      caches.open('v4').then(function (caches) {
+      caches.open('v5').then(function (caches) {
         return caches.addAll([
           '/',
           '/offline',
